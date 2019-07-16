@@ -160,10 +160,68 @@ Average humidity: 42
 
 1. What is AWK for?
 2. Basics
-3. More advanced features
+3. **More advanced features**
+    3.1 Arrays
 
 ---
 
-# Arrays
+1. What is AWK for?
+2. Basics
+3. More advanced features
+    3.1 **Arrays**
 
- 
+---
+
+# Nature of arrays
+
+* Arrays are associative. Awk doesn't have linked lists.
+* Arrays in awk can be looped through with a *for each* syntax, but you don't get insertion order.
+* If you want insertion order you have to use an incremental index and use a regular loop with an incremental index (`for(i=1;i<=length(a);i++){print a[i];}`)
+
+---
+
+## A few examples with arrays (1)
+
+Column 3 of `Average_Daily_Traffic_counts.csv` is a street name. Print the first record for every street (uniq by column)
+
+``` 
+awk -F"," '!_[$3]++' Average_Daily_Traffic_counts.csv 
+```  
+
+---
+
+## A few examples with arrays (2)
+
+Column 3 of `Average_Daily_Traffic_counts.csv` is a street name. Print the number of occurences. 
+
+``` 
+BEGIN{
+  FS=",";
+  OFS=" ==> "
+}
+NR >= 1{
+  _[$3]++
+}
+END{
+  for(el in _){
+    print el, _[el];
+  }
+}
+```  
+
+---
+
+## Multidimensional arrays
+
+They aren't really multidimensional. But, who cares? Or maybe you should?
+
+``` 
+a["2019", "Salamanca"]=1342
+
+for(el in a){
+  print el, a[el]
+  # ??
+}
+```  
+
+---
