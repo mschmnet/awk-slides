@@ -108,13 +108,13 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-theme="uncover" style="--theme:uncover;">
-<h1>Why should I use AWK for?</h1>
+<h2>Why should I use AWK for?</h2>
 <blockquote>
 <p>I need to process an input file by splitting it up in <strong>records</strong> and <strong>fields</strong></p>
 </blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-marpit-fragments="3" data-theme="uncover" style="--theme:uncover;">
-<h1>How are files split into <em>records</em> and <em>fields</em>?</h1>
+<h2>How are files split into <em>records</em> and <em>fields</em>?</h2>
 <ul>
 <li data-marpit-fragment="1">By default the input record separator is <code>\n</code> and the dafault field separator is any number of <strong>spaces</strong> and/or <strong>tabs</strong> and/or <strong>new line</strong> characters.</li>
 <li data-marpit-fragment="2">The defaults can be changed with the special variables <code>RS</code> (<em>Record Separator</em>) and <code>FS</code> (<em>Field Separator</em>)</li>
@@ -122,7 +122,7 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="3" data-theme="uncover" style="--theme:uncover;">
-<h1>What is the AWK's input?</h1>
+<h2>What is the AWK's input?</h2>
 <ul>
 <li data-marpit-fragment="1">It can be <em>standard input</em></li>
 <li data-marpit-fragment="2">It can be one or more file</li>
@@ -130,7 +130,7 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-marpit-fragments="3" data-theme="uncover" style="--theme:uncover;">
-<h1>Multiple input files</h1>
+<h2>Multiple input files</h2>
 <ul>
 <li data-marpit-fragment="1">You can specify multiple files: <code>awk '{print $1}' input.txt input-2.txt</code></li>
 <li data-marpit-fragment="2">You can mix files with <em>standard input</em>: <code>cat input.txt | awk '{print $1}' - input-2.txt</code></li>
@@ -145,7 +145,7 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-marpit-fragments="2" data-theme="uncover" style="--theme:uncover;">
-<h1>Where to put your awk coke</h1>
+<h2>Where to put your awk code</h2>
 <ul>
 <li data-marpit-fragment="1">Inline: <code>awk '{print $1}' input.txt</code></li>
 <li data-marpit-fragment="2">In a separate file</li>
@@ -164,7 +164,7 @@ article#presentation > svg[data-marpit-svg] > foreignObject[data-marpit-advanced
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-fragments="4" data-theme="uncover" style="--theme:uncover;">
-<h1>Main blocks</h1>
+<h2>Main blocks</h2>
 <ul>
 <li data-marpit-fragment="1"><code>BEGIN{}</code>: This block of code is executed <em>before</em> the first record is processed</li>
 <li data-marpit-fragment="2"><code>END{}</code>: This block is executed <em>after</em> the last record has been processed</li>
@@ -216,7 +216,7 @@ Average humidity: <span class="hljs-number">42</span>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-marpit-fragments="5" data-theme="uncover" style="--theme:uncover;">
-<h1>Record processing</h1>
+<h2>Record processing</h2>
 <ul>
 <li data-marpit-fragment="1">To every record a list of pairs applies. Every pair is made up of:
 <ul>
@@ -235,7 +235,7 @@ Average humidity: <span class="hljs-number">42</span>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-marpit-fragments="4" data-theme="uncover" style="--theme:uncover;">
-<h2>Record processing (examples)</h2>
+<h3>Record processing (examples)</h3>
 <ul>
 <li data-marpit-fragment="1">Both, condition and code block, are present: <code>awk '$1 ~ /one/{print &quot;Number 1&quot;}' &lt; input.txt</code></li>
 <li data-marpit-fragment="2">Condition is missing: <code>awk '{print &quot;Number &quot; $1}' &lt; input.txt</code> (same as <code>'1{print &quot;Number &quot; $1}'</code></li>
@@ -251,7 +251,7 @@ Average humidity: <span class="hljs-number">42</span>
 3.1 Arrays<br />
 3.2 Functions<br />
 3.3 Environment variables<br />
-3.4 External programs<br />
+3.4 External commands<br />
 3.5 Import libraries<br />
 3.6 Ranges</li>
 </ol>
@@ -264,13 +264,13 @@ Average humidity: <span class="hljs-number">42</span>
 3.1 <strong>Arrays</strong><br />
 3.2 Functions<br />
 3.3 Environment variables<br />
-3.4 External programs<br />
+3.4 External commands<br />
 3.5 Import libraries<br />
 3.6 Ranges</li>
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-fragments="3" data-theme="uncover" style="--theme:uncover;">
-<h1>Nature of arrays</h1>
+<h2>Nature of arrays</h2>
 <ul>
 <li data-marpit-fragment="1">Arrays are associative. Awk doesn't have linked lists.</li>
 <li data-marpit-fragment="2">Arrays in awk can be looped through with a <em>for each</em> syntax, but you don't get insertion order.</li>
@@ -278,13 +278,13 @@ Average humidity: <span class="hljs-number">42</span>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-theme="uncover" style="--theme:uncover;">
-<h2>A few examples with arrays (1)</h2>
+<h3>A few examples with arrays (1)</h3>
 <p>Column 3 of <code>Average_Daily_Traffic_counts.csv</code> is a street name. Print the first record for every street (uniq by column)</p>
 <pre><code><span class="hljs-attribute">awk</span> -F<span class="hljs-string">","</span> <span class="hljs-string">'!_[<span class="hljs-variable">$3</span>]++'</span> Average_Daily_Traffic_counts.csv 
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-theme="uncover" style="--theme:uncover;">
-<h2>A few examples with arrays (2)</h2>
+<h3>A few examples with arrays (2)</h3>
 <p>Column 3 of <code>Average_Daily_Traffic_counts.csv</code> is a street name. Print the number of occurences.</p>
 <pre><code>BEGIN{
   <span class="hljs-attribute">FS</span>=<span class="hljs-string">","</span>;
@@ -311,7 +311,24 @@ END{
 }
 </code></pre>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-theme="uncover" style="--theme:uncover;"></section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-theme="uncover" style="--theme:uncover;">
+<h3>Multidimensional arrays (example)</h3>
+<pre><code><span class="hljs-comment">#!/usr/bin/awk -f</span>
+
+BEGIN{
+  FS=<span class="hljs-string">","</span>;
+}
+NR &gt; <span class="hljs-number">1</span>{
+  <span class="hljs-number">_</span>[$4,$3]++;
+}
+END{
+  <span class="hljs-keyword">for</span>(el in <span class="hljs-number">_</span>){
+    <span class="hljs-keyword">split</span>(el, <span class="hljs-keyword">keys</span>, SUBSEP);
+    <span class="hljs-keyword">printf</span> <span class="hljs-string">"%-15s %-30s %10d\n"</span>, <span class="hljs-keyword">keys</span>[<span class="hljs-number">1</span>], <span class="hljs-keyword">keys</span>[<span class="hljs-number">2</span>], <span class="hljs-number">_</span>[el];
+  }
+}
+</code></pre>
+</section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-theme="uncover" style="--theme:uncover;">
 <ol>
 <li>What is AWK for?</li>
@@ -320,23 +337,23 @@ END{
 3.1 Arrays<br />
 3.2 <strong>Functions</strong><br />
 3.3 Environment variables<br />
-3.4 External programs<br />
+3.4 External commands<br />
 3.5 Import libraries<br />
 3.6 Ranges</li>
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-theme="uncover" style="--theme:uncover;">
-<ol>
-<li>What is AWK for?</li>
-<li>Basics</li>
-<li>More advanced features<br />
-3.1 Arrays<br />
-3.2 Functions<br />
-3.3 <strong>Environment variables</strong><br />
-3.4 External programs<br />
-3.5 Import libraries<br />
-3.6 Ranges</li>
-</ol>
+<h2>Functions</h2>
+<pre><code><span class="hljs-meta">#!/usr/bin/awk -f</span>
+
+BEGIN{
+ print_text(<span class="hljs-string">"Hello world"</span>);
+}
+
+<span class="hljs-built_in">function</span> print_text(text_parameter){
+  print <span class="hljs-string">"This function prints the parameter: "</span> text_parameter;
+}
+</code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-theme="uncover" style="--theme:uncover;">
 <ol>
@@ -345,13 +362,18 @@ END{
 <li>More advanced features<br />
 3.1 Arrays<br />
 3.2 Functions<br />
-3.3 Environment variables<br />
-3.4 <strong>External programs</strong><br />
+3.3 <strong>Environment variables</strong><br />
+3.4 External commands<br />
 3.5 Import libraries<br />
 3.6 Ranges</li>
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-theme="uncover" style="--theme:uncover;">
+<h2><strong>Environment variables</strong></h2>
+<pre><code><span class="hljs-attribute">awk</span> -v home_dir=<span class="hljs-variable">$HOME</span> <span class="hljs-string">'BEGIN{print home_dir}'</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-theme="uncover" style="--theme:uncover;">
 <ol>
 <li>What is AWK for?</li>
 <li>Basics</li>
@@ -359,15 +381,54 @@ END{
 3.1 Arrays<br />
 3.2 Functions<br />
 3.3 Environment variables<br />
-3.4 External programs<br />
+3.4 <strong>External commands</strong><br />
+3.5 Import libraries<br />
+3.6 Ranges</li>
+</ol>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-theme="uncover" style="--theme:uncover;">
+<h2>External commands (sigle result)</h2>
+<pre><code>#!/usr/bin/awk -f
+
+BEGIN{
+  command_get_date=<span class="hljs-string">"date +\"</span><span class="hljs-built_in">%d</span>-<span class="hljs-built_in">%m</span>-<span class="hljs-built_in">%Y</span>\<span class="hljs-string">""</span>
+  command_get_date | getline result<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">close</span>(command_get_date)<span class="hljs-comment">;</span>
+  <span class="hljs-keyword">print</span> <span class="hljs-string">"Today is "</span> result<span class="hljs-comment">;</span>
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-theme="uncover" style="--theme:uncover;">
+<h2>External commands (multiple lines)</h2>
+<pre><code>
+<span class="hljs-meta">#!/usr/bin/awk -f</span>
+
+BEGIN{
+  command_cat=<span class="hljs-string">"cat ./input.txt"</span>;
+  <span class="hljs-keyword">while</span> (( command_cat | getline line) &gt; <span class="hljs-number">0</span>){
+    print <span class="hljs-string">"Line is: "</span> line;
+  }
+  close(command_cat);
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-theme="uncover" style="--theme:uncover;">
+<ol>
+<li>What is AWK for?</li>
+<li>Basics</li>
+<li>More advanced features<br />
+3.1 Arrays<br />
+3.2 Functions<br />
+3.3 Environment variables<br />
+3.4 External commands<br />
 3.5 <strong>Import libraries</strong><br />
 3.6 Ranges</li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-theme="uncover" style="--theme:uncover;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-theme="uncover" style="--theme:uncover;">
 <p><a href="https://stackoverflow.com/a/28463193/6939011">https://stackoverflow.com/a/28463193/6939011</a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-theme="uncover" style="--theme:uncover;">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-theme="uncover" style="--theme:uncover;">
 <ol>
 <li>What is AWK for?</li>
 <li>Basics</li>
@@ -375,12 +436,35 @@ END{
 3.1 Arrays<br />
 3.2 Functions<br />
 3.3 Environment variables<br />
-3.4 External programs<br />
+3.4 External commands<br />
 3.5 Import libraries<br />
 3.6 <strong>Ranges</strong></li>
 </ol>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-theme="uncover" style="--theme:uncover;"></section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-theme="uncover" style="--theme:uncover;">
+<h2>Ranges (regular way)</h2>
+<pre><code>awk <span class="hljs-string">'/15:00/,/05:00/'</span> &lt; temperature-salamanca<span class="hljs-selector-class">.csv</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-theme="uncover" style="--theme:uncover;">
+<h2>Ranges (custom way)</h2>
+<pre><code><span class="hljs-comment">#!/usr/bin/awk -f</span>
+/15:00/{
+  <span class="hljs-attribute">want_print</span>=1;
+  #next;
+}
+want_print{
+  <span class="hljs-builtin-name">print</span> <span class="hljs-variable">$0</span>;
+}
+/05:00/{
+  <span class="hljs-attribute">want_print</span>=0
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-theme="uncover" style="--theme:uncover;">
+<h1>The End</h1>
+<p>Thank you very much</p>
+</section>
 </foreignObject></svg></article><script>!function(){"use strict";const t=()=>"Apple Computer, Inc."===navigator.vendor?[e]:[];function e(t){Array.from(document.getElementsByTagName("svg"),e=>{if(e.hasAttribute("data-marpit-svg")){const{clientHeight:r,clientWidth:a}=e;e.style.transform||(e.style.transform="translateZ(0)");const i=t||e.currentScale||1,n=e.viewBox.baseVal.width/i,s=e.viewBox.baseVal.height/i,o=Math.min(r/s,a/n);Array.from(e.querySelectorAll(":scope > foreignObject"),t=>{const e=t.x.baseVal.value,i=t.y.baseVal.value;Array.from(t.querySelectorAll(":scope > section"),t=>{t.style.transformOrigin||(t.style.transformOrigin="0 0");const l=(a-o*n)/2-e,c=(r-o*s)/2-i;t.style.transform=`translate3d(${l}px,${c}px,0) scale(${o}) translate(${e}px,${i}px)`})})}})}const r="data-marp-fitting",a="data-marp-fitting-code",i="data-marp-fitting-math",n=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};!function(e=!0){const s=()=>{for(const e of t())e();Array.from(document.querySelectorAll(`svg[${r}="svg"]`),t=>{const e=t.firstChild,r=e.firstChild,{scrollWidth:s,scrollHeight:o}=r;let l,c=1;if(t.hasAttribute(a)&&(l=t.parentElement.parentElement),t.hasAttribute(i)&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft)-parseFloat(t.paddingRight));e&&(c=e)}const m=Math.max(s,c),p=Math.max(o,1),g=`0 0 ${m} ${p}`;n(e,"width",`${m}`),n(e,"height",`${p}`),n(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),n(t,"viewBox",g)&&t.classList.toggle("__reflow__")}),e&&window.requestAnimationFrame(s)};s()}()}();
 </script><script>!function(){"use strict";var e={from:function(e,t){var n=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),r=[].filter.call("string"==typeof e.slides?n.querySelectorAll(e.slides):e.slides||n.children,function(e){return"SCRIPT"!==e.nodeName}),i=r[0],l={},o=function(e,t){r[e]&&(c("deactivate",u(i,t)),i=r[e],c("activate",u(i,t)))},s=function(e,t){var n=r.indexOf(i)+e;c(e>0?"next":"prev",u(i,t))&&o(n,t)},a=function(e,t){l[e]=(l[e]||[]).filter(function(e){return e!==t})},c=function(e,t){return(l[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},u=function(e,t){return(t=t||{}).index=r.indexOf(e),t.slide=e,t},d={on:function(e,t){return(l[e]||(l[e]=[])).push(t),a.bind(null,e,t)},off:a,fire:c,slide:function(e,t){if(!arguments.length)return r.indexOf(i);c("slide",u(r[e],t))&&o(e,t)},next:s.bind(null,1),prev:s.bind(null,-1),parent:n,slides:r};return(t||[]).forEach(function(e){e(d)}),o(0),d}},t=function(){return function(e){e.slides.forEach(function(e){e.addEventListener("keydown",function(e){(/INPUT|TEXTAREA|SELECT/.test(e.target.nodeName)||"true"===e.target.contentEditable)&&e.stopPropagation()})})}};function n(e){e.parent.classList.add("bespoke-marp-parent"),e.slides.map(e=>e.classList.add("bespoke-marp-slide")),e.on("activate",t=>{e.slides.map(e=>e.classList.remove("bespoke-marp-active")),t.slide.classList.add("bespoke-marp-active")})}function r(e=2e3){return t=>{let n;function r(){n&&clearTimeout(n),n=setTimeout(()=>{t.parent.classList.add("bespoke-marp-inactive")},e),t.parent.classList.remove("bespoke-marp-inactive")}document.addEventListener("mousedown",r),document.addEventListener("mousemove",r),document.addEventListener("touchend",r),setTimeout(r,0)}}function i(e){let t=0,n=0;const r=e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")]),i=e=>void 0!==r[t][n+e],l=(i,l)=>{t=i,n=l,r.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const r=t<i||t===i&&n<=l;e.setAttribute("data-bespoke-marp-fragment",r?"active":"inactive"),t===i&&n===l?e.setAttribute("data-bespoke-marp-current-fragment","current"):e.removeAttribute("data-bespoke-marp-current-fragment")})}),e.fire("fragment",{slide:e.slides[i],index:i,fragments:r[i],fragmentIndex:l})};e.on("next",()=>{if(i(1))return l(t,n+1),!1;const e=t+1;r[e]&&l(e,0)}),e.on("prev",()=>{if(i(-1))return l(t,n-1),!1;const e=t-1;r[e]&&l(e,r[e].length-1)}),e.on("slide",({index:e,fragment:t})=>{let n=0;if(void 0!==t){const i=r[e];if(i){const{length:e}=i;n=-1===t?e-1:Math.min(Math.max(t,0),e-1)}}l(e,n)}),l(0,0)}var l,o=function(e,t){return e(t={exports:{}},t.exports),t.exports}(function(e){!function(){var t="undefined"!=typeof window&&void 0!==window.document?window.document:{},n=e.exports,r="undefined"!=typeof Element&&"ALLOW_KEYBOARD_INPUT"in Element,i=function(){for(var e,n=[["requestFullscreen","exitFullscreen","fullscreenElement","fullscreenEnabled","fullscreenchange","fullscreenerror"],["webkitRequestFullscreen","webkitExitFullscreen","webkitFullscreenElement","webkitFullscreenEnabled","webkitfullscreenchange","webkitfullscreenerror"],["webkitRequestFullScreen","webkitCancelFullScreen","webkitCurrentFullScreenElement","webkitCancelFullScreen","webkitfullscreenchange","webkitfullscreenerror"],["mozRequestFullScreen","mozCancelFullScreen","mozFullScreenElement","mozFullScreenEnabled","mozfullscreenchange","mozfullscreenerror"],["msRequestFullscreen","msExitFullscreen","msFullscreenElement","msFullscreenEnabled","MSFullscreenChange","MSFullscreenError"]],r=0,i=n.length,l={};r<i;r++)if((e=n[r])&&e[1]in t){for(r=0;r<e.length;r++)l[n[0][r]]=e[r];return l}return!1}(),l={change:i.fullscreenchange,error:i.fullscreenerror},o={request:function(e){return new Promise(function(n){var l=i.requestFullscreen,o=function(){this.off("change",o),n()}.bind(this);e=e||t.documentElement,/ Version\/5\.1(?:\.\d+)? Safari\//.test(navigator.userAgent)?e[l]():e[l](r?Element.ALLOW_KEYBOARD_INPUT:{}),this.on("change",o)}.bind(this))},exit:function(){return new Promise(function(e){if(this.isFullscreen){var n=function(){this.off("change",n),e()}.bind(this);t[i.exitFullscreen](),this.on("change",n)}else e()}.bind(this))},toggle:function(e){return this.isFullscreen?this.exit():this.request(e)},onchange:function(e){this.on("change",e)},onerror:function(e){this.on("error",e)},on:function(e,n){var r=l[e];r&&t.addEventListener(r,n,!1)},off:function(e,n){var r=l[e];r&&t.removeEventListener(r,n,!1)},raw:i};i?(Object.defineProperties(o,{isFullscreen:{get:function(){return Boolean(t[i.fullscreenElement])}},element:{enumerable:!0,get:function(){return t[i.fullscreenElement]}},enabled:{enumerable:!0,get:function(){return Boolean(t[i.fullscreenEnabled])}}}),n?(e.exports=o,e.exports.default=o):window.screenfull=o):n?e.exports=!1:window.screenfull=!1}()});function s(e){e.fullscreen=()=>o&&o.toggle(document.body),document.addEventListener("keydown",t=>{70!==t.which&&122!==t.which||t.altKey||t.ctrlKey||t.metaKey||!o||!o.enabled||(e.fullscreen(),t.preventDefault())})}function a(e={}){const t=Object.assign({history:!0},e);return e=>{function n(){const t=parseInt(window.location.hash.slice(1),10);Number.isNaN(t)||function(t){const n=Math.max(0,Math.min(t,e.slides.length-1));n!==e.slide()&&e.slide(n)}(t-1)}setTimeout(()=>{n(),e.on("activate",e=>{t.history?window.location.hash=e.index+1:window.location.replace(`#${e.index+1}`)}),window.addEventListener("hashchange",n)},0)}}function c(e={}){const t=Object.assign({interval:200},e);return e=>{document.addEventListener("keydown",t=>{(32===t.which&&t.shiftKey||33===t.which||37===t.which||38===t.which)&&e.prev(),(32===t.which&&!t.shiftKey||34===t.which||39===t.which||40===t.which)&&e.next(),35===t.which&&e.slide(e.slides.length-1,{fragment:-1}),36===t.which&&e.slide(0)});let n,r,i=0;e.parent.addEventListener("wheel",o=>{let s=!1;const a=(e,t)=>{e&&(s=s||function(e,t){return function(e,t){const n=t===l.X?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]}(e,t)&&function(e,t){const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r}(getComputedStyle(e),t)}(e,t)),e&&e.parentElement&&a(e.parentElement,t)};if(0!==o.deltaX&&a(o.target,l.X),0!==o.deltaY&&a(o.target,l.Y),s)return;o.preventDefault(),r&&clearTimeout(r),r=setTimeout(()=>{n=0},t.interval);const c=Date.now()-i<t.interval,u=Math.sqrt(Math.pow(o.deltaX,2)+Math.pow(o.deltaY,2)),d=u<=n;if(n=u,c||d)return;let f;(o.deltaX>0||o.deltaY>0)&&(f="next"),(o.deltaX<0||o.deltaY<0)&&(f="prev"),f&&(e[f](),i=Date.now())})}}function u(e=".bespoke-marp-osc"){const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[data-bespoke-marp-osc=${JSON.stringify(e)}]`).forEach(n)};return o&&!o.enabled&&n("fullscreen",e=>e.style.display="none"),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement)switch(t.target.dataset.bespokeMarpOsc){case"next":e.next();break;case"prev":e.prev();break;case"fullscreen":"function"==typeof e.fullscreen&&o&&o.enabled&&e.fullscreen()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:i})=>{n("prev",e=>e.disabled=0===t&&0===i),n("next",n=>n.disabled=t===e.slides.length-1&&i===r.length-1)}),o&&o.onchange(()=>n("fullscreen",e=>e.classList.toggle("exit",o&&o.isFullscreen)))}}!function(e){e.X="X",e.Y="Y"}(l||(l={}));const d=".bespoke-progress-bar";function f(e){e.on("activate",t=>{document.querySelectorAll(d).forEach(n=>{n.style.flexBasis=`${100*t.index/(e.slides.length-1)}%`})})}function h(e={}){const t=Object.assign({slope:Math.tan(-35*Math.PI/180),swipeThreshold:30},e);return e=>{let n;const r=e.parent,i=e=>{const t=r.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};r.addEventListener("touchstart",e=>{n=1===e.touches.length?i(e.touches[0]):void 0}),r.addEventListener("touchmove",e=>{if(n)if(1===e.touches.length){e.preventDefault();const t=i(e.touches[0]),r=t.x-n.x,l=t.y-n.y;n.delta=Math.sqrt(Math.pow(Math.abs(r),2)+Math.pow(Math.abs(l),2)),n.radian=Math.atan2(r,l)}else n=void 0}),r.addEventListener("touchend",r=>{if(n){if(n.delta&&n.delta>=t.swipeThreshold){let i=n.radian-t.slope;i=(i+Math.PI)%(2*Math.PI)-Math.PI,e[i<0?"next":"prev"](),r.stopPropagation()}n=void 0}})}}e.from(document.getElementById("presentation"),[t(),n,r(),a({history:!1}),c(),s,f,h(),u(),i])}();
 </script></body></html>

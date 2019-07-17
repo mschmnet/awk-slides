@@ -25,13 +25,13 @@ https://github.com/mschmnet/awk-slides
 
 ---
 
-# Why should I use AWK for?
+## Why should I use AWK for?
 
 > I need to process an input file by splitting it up in **records** and **fields**
 
 ---
 
-# How are files split into *records* and *fields*?
+## How are files split into *records* and *fields*?
 
 * By default the input record separator is `\n` and the dafault field separator is any number of **spaces** and/or **tabs** and/or **new line** characters.  
 * The defaults can be changed with the special variables `RS` (*Record Separator*) and `FS` (*Field Separator*)
@@ -39,7 +39,7 @@ https://github.com/mschmnet/awk-slides
 
 ---
 
-# What is the AWK's input?
+## What is the AWK's input?
 
 * It can be *standard input*
 * It can be one or more file
@@ -47,7 +47,7 @@ https://github.com/mschmnet/awk-slides
 
 ---
 
-# Multiple input files
+## Multiple input files
 
 * You can specify multiple files: `awk '{print $1}' input.txt input-2.txt` 
 * You can mix files with *standard input*: `cat input.txt | awk '{print $1}' - input-2.txt`
@@ -61,7 +61,7 @@ https://github.com/mschmnet/awk-slides
 
 ---
 
-# Where to put your awk coke
+## Where to put your awk code
 
 * Inline: `awk '{print $1}' input.txt`
 * In a separate file
@@ -80,7 +80,7 @@ https://github.com/mschmnet/awk-slides
 * Or you can assign execution permission to the file and execute it directly: `chmod +x script.awk; ./script.awk < input.txt`
 ---
 
-# Main blocks
+## Main blocks
 
 * `BEGIN{}`: This block of code is executed *before* the first record is processed
 * `END{}`: This block is executed *after* the last record has been processed
@@ -139,7 +139,7 @@ Average humidity: 42
 
 ---
 
-# Record processing
+## Record processing
 
 * To every record a list of pairs applies. Every pair is made up of:
     * A **condition** that checks if following code block must be executed or not
@@ -149,7 +149,7 @@ Average humidity: 42
 
 ---
 
-## Record processing (examples)
+### Record processing (examples)
 
 * Both, condition and code block, are present: `awk '$1 ~ /one/{print "Number 1"}' < input.txt`
 * Condition is missing: `awk '{print "Number " $1}' < input.txt` (same as `'1{print "Number " $1}'`
@@ -164,7 +164,7 @@ Average humidity: 42
     3.1 Arrays
     3.2 Functions
     3.3 Environment variables
-    3.4 External programs
+    3.4 External commands
     3.5 Import libraries
     3.6 Ranges
 
@@ -176,13 +176,13 @@ Average humidity: 42
     3.1 **Arrays**
     3.2 Functions
     3.3 Environment variables
-    3.4 External programs
+    3.4 External commands
     3.5 Import libraries
     3.6 Ranges
 
 ---
 
-# Nature of arrays
+## Nature of arrays
 
 * Arrays are associative. Awk doesn't have linked lists.
 * Arrays in awk can be looped through with a *for each* syntax, but you don't get insertion order.
@@ -190,7 +190,7 @@ Average humidity: 42
 
 ---
 
-## A few examples with arrays (1)
+### A few examples with arrays (1)
 
 Column 3 of `Average_Daily_Traffic_counts.csv` is a street name. Print the first record for every street (uniq by column)
 
@@ -200,7 +200,7 @@ awk -F"," '!_[$3]++' Average_Daily_Traffic_counts.csv
 
 ---
 
-## A few examples with arrays (2)
+### A few examples with arrays (2)
 
 Column 3 of `Average_Daily_Traffic_counts.csv` is a street name. Print the number of occurences. 
 
@@ -236,7 +236,24 @@ for(el in a){
 
 ---
 
+### Multidimensional arrays (example)
 
+```
+#!/usr/bin/awk -f
+
+BEGIN{
+  FS=",";
+}
+NR > 1{
+  _[$4,$3]++;
+}
+END{
+  for(el in _){
+    split(el, keys, SUBSEP);
+    printf "%-15s %-30s %10d\n", keys[1], keys[2], _[el];
+  }
+}
+```
 
 ---
 
@@ -246,9 +263,24 @@ for(el in a){
     3.1 Arrays
     3.2 **Functions**
     3.3 Environment variables
-    3.4 External programs
+    3.4 External commands
     3.5 Import libraries
     3.6 Ranges
+
+---
+
+## Functions
+```
+#!/usr/bin/awk -f
+
+BEGIN{
+ print_text("Hello world");
+}
+
+function print_text(text_parameter){
+  print "This function prints the parameter: " text_parameter;
+}
+```
 
 ---
 
@@ -258,9 +290,17 @@ for(el in a){
     3.1 Arrays
     3.2 Functions
     3.3 **Environment variables**
-    3.4 External programs
+    3.4 External commands
     3.5 Import libraries
     3.6 Ranges
+
+---
+
+## **Environment variables**
+
+```
+awk -v home_dir=$HOME 'BEGIN{print home_dir}'
+```
 
 ---
 
@@ -270,9 +310,39 @@ for(el in a){
     3.1 Arrays
     3.2 Functions
     3.3 Environment variables
-    3.4 **External programs**
+    3.4 **External commands**
     3.5 Import libraries
     3.6 Ranges
+
+---
+
+## External commands (sigle result)
+```
+#!/usr/bin/awk -f
+
+BEGIN{
+  command_get_date="date +\"%d-%m-%Y\""
+  command_get_date | getline result;
+  close(command_get_date);
+  print "Today is " result;
+}
+```
+
+---
+
+## External commands (multiple lines)
+```
+
+#!/usr/bin/awk -f
+
+BEGIN{
+  command_cat="cat ./input.txt";
+  while (( command_cat | getline line) > 0){
+    print "Line is: " line;
+  }
+  close(command_cat);
+}
+```
 
 ---
 
@@ -282,7 +352,7 @@ for(el in a){
     3.1 Arrays
     3.2 Functions
     3.3 Environment variables
-    3.4 External programs
+    3.4 External commands
     3.5 **Import libraries**
     3.6 Ranges
 
@@ -298,9 +368,37 @@ https://stackoverflow.com/a/28463193/6939011
     3.1 Arrays
     3.2 Functions
     3.3 Environment variables
-    3.4 External programs
+    3.4 External commands
     3.5 Import libraries
     3.6 **Ranges**
 
 ---
+
+## Ranges (regular way)
+```
+awk '/15:00/,/05:00/' < temperature-salamanca.csv
+```
+
+---
+
+## Ranges (custom way)
+```
+#!/usr/bin/awk -f
+/15:00/{
+  want_print=1;
+  #next;
+}
+want_print{
+  print $0;
+}
+/05:00/{
+  want_print=0
+}
+```
+
+---
+
+# The End
+
+Thank you very much
 
