@@ -162,6 +162,11 @@ Average humidity: 42
 2. Basics
 3. **More advanced features**
     3.1 Arrays
+    3.2 Functions
+    3.3 Environment variables
+    3.4 External programs
+    3.5 Import libraries
+    3.6 Ranges
 
 ---
 
@@ -169,6 +174,11 @@ Average humidity: 42
 2. Basics
 3. More advanced features
     3.1 **Arrays**
+    3.2 Functions
+    3.3 Environment variables
+    3.4 External programs
+    3.5 Import libraries
+    3.6 Ranges
 
 ---
 
@@ -225,3 +235,72 @@ for(el in a){
 ```  
 
 ---
+
+
+
+---
+
+1. What is AWK for?
+2. Basics
+3. More advanced features
+    3.1 Arrays
+    3.2 **Functions**
+    3.3 Environment variables
+    3.4 External programs
+    3.5 Import libraries
+    3.6 Ranges
+
+---
+
+1. What is AWK for?
+2. Basics
+3. More advanced features
+    3.1 Arrays
+    3.2 Functions
+    3.3 **Environment variables**
+    3.4 External programs
+    3.5 Import libraries
+    3.6 Ranges
+
+---
+
+1. What is AWK for?
+2. Basics
+3. More advanced features
+    3.1 Arrays
+    3.2 Functions
+    3.3 Environment variables
+    3.4 **External programs**
+    3.5 Import libraries
+    3.6 Ranges
+
+---
+
+1. What is AWK for?
+2. Basics
+3. More advanced features
+    3.1 Arrays
+    3.2 Functions
+    3.3 Environment variables
+    3.4 External programs
+    3.5 **Import libraries**
+    3.6 Ranges
+
+---
+
+https://stackoverflow.com/a/28463193/6939011
+
+---
+
+1. What is AWK for?
+2. Basics
+3. More advanced features
+    3.1 Arrays
+    3.2 Functions
+    3.3 Environment variables
+    3.4 External programs
+    3.5 Import libraries
+    3.6 **Ranges**
+
+---
+
