@@ -1,3 +1,7 @@
+# Slides as PDF
+
+Besides you can build the PDF and html files from `slides-awk.md` file, here is also the build PDF: https://github.com/mschmnet/awk-slides/raw/master/pdf/awk-slides.pdf
+
 # How to generate pdf and html files
 
 ## Requirements
