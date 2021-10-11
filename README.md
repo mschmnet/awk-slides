@@ -34,6 +34,10 @@ Besides you can build the PDF and html files from `slides-awk.md` file, here is 
 ### Generate html
 
     make html
+    
+### Show HTML in http-server
+
+    make show
 
 ### List targets
 
